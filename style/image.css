@@ -1,0 +1,35 @@
+.image{
+    border: 1px solid black;
+    margin: 20px 20px;
+
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+.part{
+    width: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+}
+
+.part input{
+    width: 200px;
+    height: 25px;
+}
+.part label{
+    font-weight: 600;
+    margin: 5px 1px;
+}
+.part button{
+    margin: 10px 0px;
+    width: 20%;
+    background-color: greenyellow;
+    border: 1px solid transparent;
+    padding: 5px 10px;
+    border-radius: 5px;
+}

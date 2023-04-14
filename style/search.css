@@ -1,0 +1,92 @@
+.contant{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.search{
+
+    display: flex;
+    flex-direction: row;
+    border: 1px solid black;
+    padding: 10px 10px;
+    justify-content: space-around;
+}
+.input{
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.input input{
+    height: 25px;
+    width: 230px;
+    margin-left: 20px;
+    outline: none;
+}
+
+.input .sear{
+    text-decoration: none;
+    /* border:  1px solid black; */
+    padding: 5px 10px;
+    margin: 5px 10px;
+}
+
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    margin-left: 10px;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+    border: 1px solid black;
+
+}
+
+.active-row td{
+    padding-left: 30px ; 
+    border: 1px solid black;
+}
+
+form{
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid black; */
+    width: 85%;
+}
+
+.search #clear{
+        width: 10%;
+        background-color: rgb(234, 121, 121);
+        border: 1px solid transparent;
+}
+
+.hove:hover{
+    background-color: #ddefec;
+}
+
+#clear :hover{
+    background-color: #ddefec;
+}
+
+
+#action .action{
+    text-decoration: none;
+    padding: 5px 5px;
+    /* border: 1px solid black; */
+    text-align: center;
+    color: black;
+    margin: 2px;
+}

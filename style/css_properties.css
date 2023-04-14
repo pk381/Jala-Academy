@@ -1,0 +1,79 @@
+.props{
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.alts{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+.prop{
+    /* border: 1px solid black; */
+    border-radius: 4px;
+    padding: 2px 2px;
+    margin: 2px 4px;
+    color: white;
+    font-weight: 600;
+    background-color: aqua;
+}
+
+.btns{
+    border: 1px solid rgb(41, 236, 236);
+    padding: 5px 5px;
+}
+
+.alert{
+    background-color: blanchedalmond;
+    margin: 2px 2px;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 95%;
+    padding: 10px 10px;
+
+}
+
+.alt-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent;
+    background-color: transparent;
+    height: 20px;
+    font-size: 30px;
+    width: 20px;
+}
+
+.bars{
+    width: 80%;
+    height: 20px;
+    background-color: aqua;
+    margin: 10px;
+    /* border: 1px solid black; */
+    border-radius: 3px;
+    outline: none;
+}
+
+.barss{
+    width: 100%;
+}
+
+#pr1::-webkit-progress-value {
+    background: green;
+}
+#pr2::-webkit-progress-value {
+    background: rgb(79, 186, 210);
+}
+#pr3::-webkit-progress-value {
+    background: yellowgreen;
+}
+#pr4::-webkit-progress-value {
+    background: rgb(199, 51, 51);
+}
