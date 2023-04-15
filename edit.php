@@ -20,7 +20,6 @@ else{
   $address = "";
   $country = "";
   $city = "";
-  $skill = "";
 
   if($_SERVER['REQUEST_METHOD'] == 'GET'){
 
@@ -29,10 +28,7 @@ else{
         header("location: /Project/search.php");
     }
 
-
     $email = $_GET["email"];
-
-    // echo $email;
   
 
     $sql = "select * from employee where `email` like '$email'";
@@ -62,24 +58,19 @@ else{
     $mobile_no = $_POST['mobile_no'];
     $date = $_POST['date'];
     $gender = $_POST['gender'];
-    $address =$_POST['address'];
+    $address = $_POST['address'];
     $country = $_POST['country'];
     $city = $_POST['city'];
-    $skill =$_POST['skill'];
+    $skill = $_POST['skill'];
 
-
-    $sql = "INSERT INTO `employee` (`first_name`, `last_name`, `email`, `mobile_no`,
-    `dob`, `gender`, `address`, `country`, `city`, `skills`)
-      VALUES ('$first', '$last', '$email', '$mobile_no', '$date',
-        '$gender', '$address', '$country', '$city', '$skill')";
-
+    $sql = "UPDATE `employee` SET `first_name` = '$first', `last_name` = '$last', `mobile_no` = '$mobile_no', `dob` = '$date', `gender` = '$gender', `address` = '$address', `country` = '$country', `city` = '$city'  WHERE `employee`.`email` = '$email'";
     $result = mysqli_query($conn, $sql);
 
     if($result){
-      echo "done";
+      header("location: /Project/search.php");
     }
     else{
-      echo "somthing went wrong";
+      echo "alert('Somthing went wrong')";
     }
 
   }
@@ -104,54 +95,11 @@ else{
         <a id="logout" href="/Project/logout.php">Logout</a>
       </div>
       <div class="main">
-        <div class="sidebar">
-          <div class="user">
-            <h2>User</h2>
-          </div>
-
-          <ul class="side">
-            <li id="home">Home</li>
-            <li>
-              <div class="trans">
-                Employee
-                <ul class="list">
-                  <li class="sublist">Crest</li>
-                  <li class="sublist">Search</li>
-                </ul>
-              </div>
-            </li>
-            <li>
-              <div class="trans">
-                More
-                <ul class="list">
-                  <li class="sublist">list</li>
-                  <li class="sublist">list</li>
-                  <li class="sublist">list</li>
-                  <li class="sublist">list</li>
-                  <li class="sublist">list</li>
-                  <li class="sublist">list</li>
-                  <li class="sublist">list</li>
-                  <li class="sublist">list</li>
-                  <li class="sublist">list</li>
-                  <li class="sublist">list</li>
-                </ul>
-              </div>
-            </li>
-            <li>
-              <div class="trans">
-                Setting
-                <ul class="list">
-                  <li class="sublist">settings</li>
-                  <li class="sublist">settings</li>
-                  <li class="sublist">settings</li>
-                </ul>
-              </div>
-            </li>
-          </ul>
-        </div>
+        
+      <?php include 'side.php';?>
 
         <div class="contant">
-          <form action="create_employee.php" method="post">
+          <form action="edit.php" method="post">
             <div class="message">
               <h1>Employee</h1>
             </div>
@@ -250,8 +198,8 @@ else{
             <div class="mb3 msg"></div>
 
             <div id="btn">
-              <a href="/Project/create_employee.php" class="formbtn" style="background-color: aqua;">Save</a>
-              <a href="/Project/search.php" class="formbtn" style="background-color: blue;">Cancle</a>
+            <button type="submit" class="formbtn" style="background-color: green; border: 1px solid transparent">Save</button>
+            <a href="/Project/search.php" class="formbtn" style="background-color: blue;">Cancle</a>
             </div>
           </form>
         </div>
