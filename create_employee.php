@@ -2,6 +2,8 @@
 <?php
 session_start();
 
+
+
 if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
   header("location: login.php");
   exit;
@@ -9,6 +11,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
 else{
 
   include 'connect.php';
+
 
   if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
@@ -50,7 +53,7 @@ else{
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="create_employee.css" />
+    <link rel="stylesheet" href="style/create_employee.css" />
     <link rel="stylesheet" href="style/style.css" />
     <title>Magnus</title>
   </head>
@@ -73,24 +76,24 @@ else{
             <div class="mb3">
               <div class="input">
                 <label  for="name"> First Name</label>
-                <input name="first" type="text" />
+                <input name="first" type="text" required />
               </div>
 
               <div class="input">
                 <label for="last">Last Name</label>
-                <input name="last" type="text" />
+                <input name="last" type="text" required />
               </div>
 
               <div class="input">
                 <label for="email">Email</label>
-                <input name="email" type="email" />
+                <input name="email" type="email" required />
               </div>
             </div>
 
             <div class="mb3">
               <div class="input">
                 <label for="phone">Mobile Number</label>
-                <input name="mobile_no" type="text" />
+                <input name="mobile_no" type="text" required />
               </div>
 
               <div class="input">
@@ -164,8 +167,8 @@ else{
             <div class="mb3 msg"></div>
 
             <div id="btn">
-              <a href="/Project/create_employee.php" class="formbtn" style="background-color: aqua;">Save</a>
-              <a href="/Project/search.php" class="formbtn" style="background-color: blue;">Cancle</a>
+            <button type="submit" class="formbtn" style="background-color: green; border: 1px solid transparent">Save</button>
+            <a href="/Project/search.php" class="formbtn" style="background-color: blue;">Cancle</a>
             </div>
           </form>
         </div>
