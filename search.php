@@ -65,8 +65,8 @@ else{
               </div>
 
               <div class="input">
-                <a href="/Project/search.php" class="sear"  style="background-color: blue;">Search</a>
-                <a href="" class="sear"  style="background-color: blanchedalmond;">Clear</a>
+              <button type="submit" class="sear" style="background-color: green; border: 1px solid transparent">Search</button>
+              <a href="" class="sear"  style="background-color: red;">Clear</a>
               </div>
             </form>
           </div>
