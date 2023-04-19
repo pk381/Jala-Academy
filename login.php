@@ -65,7 +65,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         <div class="admin">
             <button class="hov">Forget Password</button>
             <div id="a">
-                <a href="Project/admin_login.php">Admin Login</a>
+                <a href="/Project/admin_login.php">Admin Login</a>
             </div>
         </div>
     </div>
