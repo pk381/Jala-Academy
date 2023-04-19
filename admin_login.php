@@ -1,3 +1,29 @@
+<?php
+
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+    $email = $_POST['email'];
+    $pass = $_POST['password'];
+
+// database connection
+    include 'connect.php';
+
+    $sql = "SELECT * FROM `admin` WHERE `email` LIKE '$email' AND `password` LIKE '$pass'";
+
+    $result = mysqli_query($conn, $sql);
+
+    $result = mysqli_fetch_assoc($result);
+
+    if($pass == $result['password'] && $email == $result['email']){
+
+        session_start();
+        $_SESSION['loggedin'] = true;
+        header("location: index.php");
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +41,7 @@
         
         Admin - SignIn
         <div class="form">
-            <form action="">
+            <form action="admin_login.php" method="post">
                 <div class="inpt">
                     <input type="email" placeholder="Email">
                     <input type="password" placeholder="password">
@@ -23,9 +49,9 @@
 
                 <div class="buttons">
                     <div class="reme">     
-                        <a id="back" href="http://">Back</a>
+                        <a id="back" href="/Project/login.php">Back</a>
                     </div>
-                    <button class="hov">Sign In</button>
+                    <button type = "submit" class="hov">Sign In</button>
                 </div>
             </form>
         </div>
