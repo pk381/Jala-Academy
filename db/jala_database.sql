@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 14, 2023 at 02:43 PM
+-- Generation Time: Apr 19, 2023 at 05:30 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.0.25
 
@@ -20,6 +20,24 @@ SET time_zone = "+00:00";
 --
 -- Database: `jala_database`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `email` varchar(20) NOT NULL,
+  `password` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`email`, `password`) VALUES
+('abc@gmail.com', 'abc');
 
 -- --------------------------------------------------------
 
@@ -45,7 +63,6 @@ CREATE TABLE `employee` (
 --
 
 INSERT INTO `employee` (`first_name`, `last_name`, `email`, `mobile_no`, `dob`, `gender`, `address`, `country`, `city`, `skills`) VALUES
-('Prabhat', 'Kumar', 'kut0023@gmail.com', '7906', '2023-04-04', 'male', 'H NO 34. Umari Kalan', 'India', 'Rampur Manihara', 'Full Stack Developer'),
 ('Prabhat', 'Kumar', 'softtoolprabhat@gmail.com', '07906 080202', '2023-04-12', '', 'H NO 34. Umari Kalan', 'India', 'Rampur Manihara', 'DepOps');
 
 -- --------------------------------------------------------
@@ -70,6 +87,12 @@ INSERT INTO `user` (`email`, `password`) VALUES
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`email`);
 
 --
 -- Indexes for table `employee`
